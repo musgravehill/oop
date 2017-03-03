@@ -14,10 +14,17 @@ spl_autoload_register(
         }
 );
 
-$notySMS = new Noty_SMS();
+$servicePost = new servicePost_unisender();
+$notySMS = new Noty_SMS($servicePost);
 
-echo $notySMS->polymorph_getVersion();
+echo $notySMS->getMan();
 echo '<br>';
-echo $notySMS->getInfo();
+echo $notySMS->aboutNoty();
 echo '<br>';
-$notySMS->send('', 'Hello, my friend!');
+$notySMS->send(array(
+    'phone' => '',
+    'message' => 'Hello, my dear friend!',
+));
+
+
+

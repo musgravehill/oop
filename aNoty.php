@@ -17,23 +17,25 @@ abstract class aNoty implements iNoty {
 
     const VERSION = 'aNoty_1.0';
 
-    private $_info = 'aNoty is abstract class for sending messages';
+    private $_aboutNoty = 'aNoty is abstract class';
+    protected $_servicePost;
 
     //abstract
-    abstract public function send($address, $message);
+    abstract public function send($params);
 
-    //полиморфизм — это способность обьекта использовать методы производного класса, который не существует на момент создания базового
-    public function polymorph_getVersion() {
-        return $this->_getVersion();
+    public function __construct($servicePost) {
+        $this->_servicePost = $servicePost;
+        return true;
     }
 
-    protected function _getVersion() { //ONLY public can polymorph
-        return self::VERSION;
+    //полиморфизм — это способность обьекта использовать методы производного класса, который не существует на момент создания базового
+    public function getMan() {
+        return $this->_getMan(); //функция будет реализована в наследнике
     }
 
     //final
-    final public function getInfo() {
-        return $this->_info;
+    final public function aboutNoty() {
+        return $this->_aboutNoty;
     }
 
 }

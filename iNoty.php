@@ -3,5 +3,5 @@
 //какие методы должен реализовать класс
 interface iNoty {
 
-    public function send($address, $message);
+    public function send($params);
 }
