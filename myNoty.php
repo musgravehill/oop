@@ -1,11 +1,8 @@
 <?php
 
-class myNoty extends Noty {
+class myNoty extends aNoty {
 
-    function sendSms() {
-        parent::sendSms();
-        echo 'ok';
-    }
+    const VERSION = 'myNoty_1.0';
 
     public function __get($name) {
         
@@ -18,4 +15,13 @@ class myNoty extends Noty {
     public function __call($name, $arguments) {
         
     }
+
+    public function getVersion() { //ONLY public can polymorph
+        return self::VERSION;
+    }
+
+    public function send($address, $message) {
+
+    }
+
 }
