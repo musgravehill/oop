@@ -14,6 +14,8 @@ spl_autoload_register(
         }
 );
 
+
+//DI
 $servicePost = new servicePost_unisender();
 $notySMS = new Noty_SMS($servicePost);
 
@@ -26,5 +28,24 @@ $notySMS->send(array(
     'message' => 'Hello, my dear friend!',
 ));
 
+class App {
+
+    public function test() {
+        echo 'app_test';
+    }
+
+}
+
+class Modol {
+
+    public function info(App $app) {
+        $app->test();
+    }
+
+}
+
+$app = new App;
+$modol = new Modol();
+$modol->info($app);
 
 

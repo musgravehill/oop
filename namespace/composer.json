@@ -1,0 +1,11 @@
+{
+    "name": "bob/ns",
+    "description": "tester",
+    "authors": [
+        {
+            "name": "bob",
+            "email": "musgravehill@gmail.com"
+        }
+    ],
+    "require": {}
+}
